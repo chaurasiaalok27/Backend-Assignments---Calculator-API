@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 app.use(bodyParser.json())
 // your code goes here
+app.get('',(req,res)=>
+{
+    res.send("Hello World!");
+});
 app.post('/add',(req,res)=>
 {
     const obj1={
@@ -21,6 +25,7 @@ app.post('/add',(req,res)=>
     };
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
+    
 
     if(isNaN(num1) || isNaN(num2))
     {
@@ -42,7 +47,9 @@ app.post('/add',(req,res)=>
             obj1.message="the sum of the given two numbers";
             obj1.sum = result;
         }
+       
     }
+    
     res.send(obj1);
 });
 
