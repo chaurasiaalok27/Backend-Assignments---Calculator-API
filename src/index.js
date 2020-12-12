@@ -25,12 +25,16 @@ app.post('/add',(req,res)=>
         message: "",
         sum: 0,
     };
-    const num1 = Number(req.body.num1);
-    const num2 = Number(req.body.num2);
+    const num1 = req.body.num1;
+    const num2 = req.body.num2;
     
 
     if(isNaN(num1) || isNaN(num2))
     {
+        obj1.status="error";
+        obj1.message="Invalid data type";
+    }
+    else if(typeof num1 === 'string' || num1 instanceof String){
         obj1.status="error";
         obj1.message="Invalid data type";
     }
