@@ -34,8 +34,8 @@ app.post('/add',(req,res)=>
         obj1.status="error";
         obj1.message="Invalid data type";
     }
-    else if(typeof num1 === 'string' || num1 instanceof String){
-        obj1.status="error";
+    else if(typeof num1 === 'string' || num1 instanceof String || typeof num2 === 'string' || num2 instanceof String){
+        obj1.status="failure";
         obj1.message="Invalid data type";
     }
     else{
