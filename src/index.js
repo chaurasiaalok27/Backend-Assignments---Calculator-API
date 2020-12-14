@@ -35,7 +35,8 @@ app.post('/add',(req,res)=>
         obj1.message="Invalid data type";
     }
     
-    else{
+    else
+    {
         let result = num1 + num2;
         if(num1 < -1000000 ||num2 < -1000000|| result < -1000000)
         {
@@ -50,9 +51,8 @@ app.post('/add',(req,res)=>
             obj1.message="The sum of the given two numbers";
             obj1.sum = result;
         }
-       
     }
-    
+
     res.send(obj1);
 });
 
@@ -145,6 +145,11 @@ app.post('/divide',(req,res)=>
     {
         obj1.status="error";
         obj1.message="Invalid data type";
+    }
+    else if(num2 === 0)
+    {
+        obj1.status="error";
+        obj1.message="Cannot divide by zero";
     }
     else{
         const result = num1/num2;
