@@ -25,8 +25,8 @@ app.post('/add',(req,res)=>
         message: "",
         sum: 0,
     };
-    let num1 = req.body.num1;
-    let num2 = req.body.num2;
+    let num1 = Number(req.body.num1);
+    let num2 = Number(req.body.num2);
     
 
     if(isNaN(num1) || isNaN(num2))
@@ -34,12 +34,9 @@ app.post('/add',(req,res)=>
         obj1.status="error";
         obj1.message="Invalid data type";
     }
-    else if(typeof num1 === 'string' || num1 instanceof String || typeof num2 === 'string' || num2 instanceof String){
-        obj1.status="failure";
-        obj1.message="Invalid data type";
-    }
+    
     else{
-        const result = parseFloat(num1) + parseFloat(num2);
+        let result = num1 + num2;
         if(num1 < -1000000 ||num2 < -1000000|| result < -1000000)
         {
             obj1.status="error";
