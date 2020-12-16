@@ -48,7 +48,7 @@ app.post('/add',(req,res)=>
             obj1.message="Overflow";
         } else {
             obj1.status="success";
-            obj1.message="The sum of the given two numbers";
+            obj1.message="the sum of the given two numbers";
             obj1.sum = result;
         }
     }
@@ -84,7 +84,7 @@ app.post('/sub',(req,res)=>
             obj1.message="Overflow";
         } else {
             obj1.status="success";
-            obj1.message="The difference of the given two numbers";
+            obj1.message="the difference of the given two numbers";
             obj1.sum = result;
         }
        
