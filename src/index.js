@@ -48,7 +48,7 @@ app.post('/add',(req,res)=>
             obj1.message="Overflow";
         } else {
             obj1.status="success";
-            obj1.message="the sum of the given two numbers";
+            obj1.message="the sum of given two numbers";
             obj1.sum = result;
         }
     }
@@ -84,7 +84,7 @@ app.post('/sub',(req,res)=>
             obj1.message="Overflow";
         } else {
             obj1.status="success";
-            obj1.message="the difference of the given two numbers";
+            obj1.message="the difference of given two numbers";
             obj1.sum = result;
         }
        
@@ -121,7 +121,7 @@ app.post('/multiply',(req,res)=>
             obj1.message="Overflow";
         } else {
             obj1.status="success";
-            obj1.message="The product of the given two numbers";
+            obj1.message="The product of given numbers";
             obj1.sum = result;
         }
        
@@ -163,7 +163,7 @@ app.post('/divide',(req,res)=>
             obj1.message="Overflow";
         } else {
             obj1.status="success";
-            obj1.message="The division of the given two numbers";
+            obj1.message="The division of given numbers";
             obj1.sum = result;
         }
        
