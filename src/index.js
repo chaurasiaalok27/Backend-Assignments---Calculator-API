@@ -61,7 +61,7 @@ app.post('/sub',(req,res)=>
     const obj1={
         status: "",
         message: "",
-        sum: 0,
+        difference: 0,
     };
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
@@ -85,7 +85,7 @@ app.post('/sub',(req,res)=>
         } else {
             obj1.status="success";
             obj1.message="the difference of given two numbers";
-            obj1.sum = result;
+            obj1.difference = result;
         }
        
     }
@@ -98,7 +98,7 @@ app.post('/multiply',(req,res)=>
     const obj1={
         status: "",
         message: "",
-        sum: 0,
+        result: 0,
     };
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
@@ -110,19 +110,19 @@ app.post('/multiply',(req,res)=>
         obj1.message="Invalid data type";
     }
     else{
-        const result = num1*num2;
-        if(num1 < -1000000 ||num2 < -1000000|| result < -1000000)
+        const result1 = num1*num2;
+        if(num1 < -1000000 ||num2 < -1000000|| result1 < -1000000)
         {
             obj1.status="error";
         obj1.message="Underflow";
-        } else if(num1 > 1000000 ||num2 > 1000000|| result > 1000000)
+        } else if(num1 > 1000000 ||num2 > 1000000|| result1 > 1000000)
         {
             obj1.status="error";
             obj1.message="Overflow";
         } else {
             obj1.status="success";
             obj1.message="The product of given numbers";
-            obj1.sum = result;
+            obj1.result = result1;
         }
        
     }
@@ -135,7 +135,7 @@ app.post('/divide',(req,res)=>
     const obj1={
         status: "",
         message: "",
-        sum: 0,
+        result: 0,
     };
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
@@ -152,19 +152,19 @@ app.post('/divide',(req,res)=>
         obj1.message="Cannot divide by zero";
     }
     else{
-        const result = num1/num2;
-        if(num1 < -1000000 ||num2 < -1000000|| result < -1000000)
+        const result1 = num1/num2;
+        if(num1 < -1000000 ||num2 < -1000000|| result1 < -1000000)
         {
             obj1.status="error";
         obj1.message="Underflow";
-        } else if(num1 > 1000000 ||num2 > 1000000|| result > 1000000)
+        } else if(num1 > 1000000 ||num2 > 1000000|| result1 > 1000000)
         {
             obj1.status="error";
             obj1.message="Overflow";
         } else {
             obj1.status="success";
             obj1.message="The division of given numbers";
-            obj1.sum = result;
+            obj1.result = result1;
         }
        
     }
