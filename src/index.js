@@ -25,6 +25,11 @@ app.post('/add',(req,res)=>
         message: "",
         sum: 0,
     };
+    if(typeof req.body.num1 === 'string' || req.body.num1 instanceof String || typeof req.body.num2 === 'string' || req.body.num2 instanceof String){
+        obj1.status="error";	       
+        obj1.message="Invalid data types";
+    }
+    else {
     let num1 = Number(req.body.num1);
     let num2 = Number(req.body.num2);
     
@@ -52,6 +57,7 @@ app.post('/add',(req,res)=>
             obj1.sum = result;
         }
     }
+}
 
     res.send(obj1);
 });
@@ -63,6 +69,11 @@ app.post('/sub',(req,res)=>
         message: "",
         difference: 0,
     };
+    if(typeof req.body.num1 === 'string' || req.body.num1 instanceof String || typeof req.body.num2 === 'string' || req.body.num2 instanceof String){
+        obj1.status="error";	       
+        obj1.message="Invalid data types";
+    }
+    else {
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     
@@ -89,6 +100,7 @@ app.post('/sub',(req,res)=>
         }
        
     }
+}
     
     res.send(obj1);
 });
@@ -100,6 +112,11 @@ app.post('/multiply',(req,res)=>
         message: "",
         result: 0,
     };
+    if(typeof req.body.num1 === 'string' || req.body.num1 instanceof String || typeof req.body.num2 === 'string' || req.body.num2 instanceof String){
+        obj1.status="error";	       
+        obj1.message="Invalid data types";
+    }
+    else {
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     
@@ -126,6 +143,7 @@ app.post('/multiply',(req,res)=>
         }
        
     }
+}
     
     res.send(obj1);
 });
@@ -137,6 +155,14 @@ app.post('/divide',(req,res)=>
         message: "",
         result: 0,
     };
+    if(typeof req.body.num1 === 'string' || req.body.num1 instanceof String || typeof req.body.num2 === 'string' || req.body.num2 instanceof String){
+        obj1.status="error";	       
+        obj1.message="Invalid data types";
+    }
+    else
+    {
+
+    
     const num1 = Number(req.body.num1);
     const num2 = Number(req.body.num2);
     
@@ -146,6 +172,7 @@ app.post('/divide',(req,res)=>
         obj1.status="error";
         obj1.message="Invalid data type";
     }
+    
     else if(num2 === 0)
     {
         obj1.status="error";
@@ -168,6 +195,7 @@ app.post('/divide',(req,res)=>
         }
        
     }
+}
     
     res.send(obj1);
 });
